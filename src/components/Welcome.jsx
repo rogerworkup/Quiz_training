@@ -1,4 +1,5 @@
 import quiz from "../img/quiz.svg";
+import "./Welcome.css"
 
 const Welcome = () => {
   return (
