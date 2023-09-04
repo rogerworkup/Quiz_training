@@ -6,15 +6,25 @@ const STAGES = ["Start", "Playing", "End"];
 const initialState = {
   gameStage: STAGES[0],
   questions,
+  currentQuestion: 0
 };
 
 const quizReducer = (state, action) => {
   console.log(state, action);
   switch (action.type) {
     case "CHANGE_STATE":
+      console.log("caiu")
       return {
+        ...state,
         gameStage: STAGES[1]
       };
+
+    case "CHANGE_QUESTION":
+        const nexQuestion = state.currentQuestion + 1;
+        return {
+          ...state,
+          currentQuestion: nexQuestion
+        }
 
     default:
       return state;
